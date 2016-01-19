@@ -15,5 +15,6 @@ $factory->define(App\User::class, function ($faker) {
     return [
         'username' => $faker->username,
         'email' => $faker->email,
+        'api_token' => $faker->word
     ];
 });

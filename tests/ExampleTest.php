@@ -13,9 +13,9 @@ class ExampleTest extends TestCase
     {
         $user = factory(App\User::class)->create();
 
-        $this->actingAs($user);
-
-        $this->get('/');
+        $this->get('/', [
+            'api_token' => $user->api_token.'--'
+        ]);
 
         $this->assertEquals(
             $this->response->getContent(), $this->app->version()

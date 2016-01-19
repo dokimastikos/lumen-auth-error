@@ -16,6 +16,7 @@ class User extends Migration
             $table->increments('id');
             $table->string('username');
             $table->string('email');
+            $table->string('api_token');
             $table->timestamps();
         });
     }
